@@ -1,18 +1,22 @@
-# 7LM tv — OmiTV-like Matchmaking (1:1)
+# 7LM tv 🎥
 
-Minimal random video chat with matchmaking filters (language, country, gender).
+تطبيق دردشة فيديو عشوائية (مشابه لفكرة OmeTV) باستخدام:
+- **Node.js + Express**
+- **WebSocket (WS)**
+- **WebRTC**
 
-## Quick start
-1. Install:
-```
-npm install
-```
-2. Run:
-```
-npm start
-```
-3. Open `http://localhost:3000` (use HTTPS for camera in remote hosts) and choose preferences, then press "ابدأ".
+يدعم:
+- تسجيل دخول / إنشاء حساب (مع تخزين في ملف JSON)
+- البحث عن شريك عشوائي والتواصل بالفيديو والصوت
+- واجهة بسيطة بلقب "7LM tv"
 
-## Notes
-- For better connectivity across NAT/firewalls, add TURN servers to `public/app.js`'s `rtcConfig.iceServers`.
-- This simple server does in-memory matchmaking. For scale, use Redis or a persistent queue and worker processes.
+---
+
+## ⚙️ تشغيل محليًا (Local)
+
+1. ثبّت [Node.js](https://nodejs.org) على جهازك.
+2. نزّل المشروع أو انسخه:
+   ```bash
+   git clone https://github.com/USERNAME/7lm-tv.git
+   cd 7lm-tv
+
