@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>7LM tv — مطابقة عشوائية</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">7LM <span>tv</span></div>
+    <div class="controls">
+      <span id="onlineCount" class="badge">0</span>
+      <span id="roomsCount" class="badge">0 غرف</span>
+      <select id="langSwitcher" class="select">
+        <option value="ar" selected>العربية</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card center">
+      <h2 data-i18n="title">ابدا الدردشة العشوائية</h2>
+      <p data-i18n="subtitle">اختار تفضيلاتك ثم اضغط ابدأ للاتصال بشخص عشوائي.</p>
+
+      <div class="prefs">
+        <label>اللغة</label>
+        <select id="prefLang" class="input">
+          <option value="any">أي</option>
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+
+        <label>الجنس</label>
+        <select id="prefGender" class="input">
+          <option value="any">أي</option>
+          <option value="male">ذكر</option>
+          <option value="female">أنثى</option>
+        </select>
+
+        <label>البلد</label>
+        <select id="prefCountry" class="input">
+          <option value="any">أي</option>
+          <option value="sa">السعودية</option>
+          <option value="eg">مصر</option>
+          <option value="sy">سوريا</option>
+          <option value="iq">العراق</option>
+          <option value="us">USA</option>
+        </select>
+      </div>
+
+      <div class="match-controls">
+        <button id="startBtn" class="btn large" data-i18n="start">ابدأ</button>
+        <button id="nextBtn" class="btn large secondary" data-i18n="next" disabled>التالي</button>
+        <button id="stopBtn" class="btn large danger" data-i18n="stop" disabled>إيقاف</button>
+      </div>
+
+      <div id="status" class="status">حالة: غير متصل</div>
+
+      <div class="video-grid">
+        <video id="localVideo" autoplay playsinline muted></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </div>
+
+      <details class="info">
+        <summary data-i18n="helpTitle">ملاحظات</summary>
+        <ul>
+          <li>هذه نسخة تجريبية — لتشغيل حقيقي استخدم TURN و HTTPS.</li>
+          <li>اضغط التالي لتجاوز الشريك الحالي والبحث عن شخص جديد.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card chat">
+      <h3 data-i18n="chatTitle">محادثة نصية</h3>
+      <div id="chatLog" class="chat-log"></div>
+      <div class="chat-inputs">
+        <input id="chatMsg" class="input" type="text" placeholder="اكتب رسالة..." />
+        <button id="sendChat" class="btn small">إرسال</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; <span id="year"></span> 7LM tv</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
