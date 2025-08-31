@@ -1,14 +1,13 @@
 {
-  "name": "7lm-otv-matchmaking",
+  "name": "7lm-tv",
   "version": "1.0.0",
-  "description": "OmiTV-like random video chat with matchmaking filters (language, country, gender) — 7LM tv",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "ws": "^8.18.0",
-    "uuid": "^9.0.1"
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "ws": "^8.12.0"
   }
 }
